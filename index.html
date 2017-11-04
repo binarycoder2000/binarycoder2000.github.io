@@ -10,9 +10,15 @@ html{
 }
 </style>
 
-<form action="encoderoutput.php" method="get">
-Text to encode: <input type="text" name="encoderinput"><br>
-<input type="submit">
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+Text to encode: <textarea name="encoderinput" rows="5" cols="40"></textarea><br>
+<input type="submit" name="submit" value="Encode">
 </form>
 
+<?php
+echo "<h2>Output:</h2>";
+echo "<br>";
+echo $encoderinput;
+?>	
+	
 </html>
